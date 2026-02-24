@@ -11,6 +11,7 @@ import { seedSuperAdmin } from "./superAdmin.seed";
 import contactRoutes from "./routes/contacrRoutes";
 import stockRoutes from "./routes/stockRoute";
 import tankRoutes from "./routes/tankRoutes";
+import expenseRoutes from "./routes/expenseRoute";
 
 const startServer = async () => {
   try {
@@ -29,6 +30,7 @@ const startServer = async () => {
     app.use("/api/contact", contactRoutes);
     app.use("/api/stocks",stockRoutes)
     app.use("/api/tanks", tankRoutes);
+    app.use("/api/expenses", expenseRoutes);
     app.listen(process.env.PORT, () => {
       console.log(`🚀 Server running on port ${process.env.PORT}`);
     });
