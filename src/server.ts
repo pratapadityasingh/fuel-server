@@ -12,6 +12,7 @@ import contactRoutes from "./routes/contacrRoutes";
 import stockRoutes from "./routes/stockRoute";
 import tankRoutes from "./routes/tankRoutes";
 import expenseRoutes from "./routes/expenseRoute";
+import onlinePaymentRoutes from "./routes/onlineRoutes";
 
 const startServer = async () => {
   try {
@@ -31,6 +32,7 @@ const startServer = async () => {
     app.use("/api/stocks",stockRoutes)
     app.use("/api/tanks", tankRoutes);
     app.use("/api/expenses", expenseRoutes);
+    app.use("/api/online", onlinePaymentRoutes);
     app.listen(process.env.PORT, () => {
       console.log(`🚀 Server running on port ${process.env.PORT}`);
     });
